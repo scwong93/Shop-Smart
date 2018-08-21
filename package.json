@@ -1,0 +1,27 @@
+{
+  "name": "Shop Smart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.14.1",
+    "connect-mongo": "^2.0.1",
+    "express": "^4.13.3",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.2.9",
+    "socket.io": "^2.1.1"
+  },
+  "engines": {
+    "node": "9.4.0"
+  },
+  "devDependencies": {
+    "qunit": "^2.6.1"
+  }
+}

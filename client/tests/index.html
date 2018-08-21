@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>QUnit Tests</title>
+
+      <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.6.2.css">
+
+      <script src="../socket.io/socket.io.js"></script>
+  </head>
+  <body>
+      <div id="qunit"></div>
+
+      <div id="qunit-fixture"></div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+
+      <script type="text/javascript">
+        require.config({
+          baseUrl: "../",
+          waitSeconds: 1,
+          paths: {
+            'QUnit': 'https://code.jquery.com/qunit/qunit-2.6.2',
+            'jquery': '../vendor/jquery/jquery.min',
+            'underscore': '../vendor/underscore/underscore.min',
+            'backbone': '../vendor/backbone/backbone.min'
+          },
+          shim: {
+            QUnit: {
+              exports: 'QUnit'
+            },
+            backbone: {
+              deps: [
+                'underscore'
+              ],
+
+              exports: 'Backbone'
+            },
+            underscore: {
+              exports: '_'
+            }
+          }
+        });
+
+        var dependencies = [
+          'jquery',
+          'QUnit',
+          'backbone'
+        ];
+
+        require(dependencies,
+          function() {
+            QUnit.config.autostart = false;
+
+            require(['/tests/tests.js']);
+          }
+        );
+      </script>
+  </body>
+</html>
